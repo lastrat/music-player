@@ -19,6 +19,8 @@ class _LayoutState extends State<Layout> {
     Center(child: UsingListAllVideos(),),
     Center(child: AudioListPage(),),
     Center(child: Browse(),),
+    Center(child: AudioListPage(),),
+    Center(child: Text("Details Here"),),
 
   ];
   @override
