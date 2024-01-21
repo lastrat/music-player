@@ -8,9 +8,6 @@ class VideoOutput extends StatefulWidget {
   final File file;
   const VideoOutput({super.key, required this.file});
 
-  File getFile(){
-    return file;
-  }
 
   @override
   State<VideoOutput> createState() => _VideoOutputState(file);

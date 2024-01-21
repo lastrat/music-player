@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:videoplayerapp/layout/AudioListPage.dart';
 import 'package:videoplayerapp/layout/Browse.dart';
 import 'package:videoplayerapp/layout/Video.dart';
+import 'package:videoplayerapp/layout/usinglistallvideos.dart';
 
 class Layout extends StatefulWidget {
   const Layout({super.key});
@@ -15,7 +16,7 @@ class _LayoutState extends State<Layout> {
 
   int _currentIndex = 0;
   final lists = const [
-    Center(child: VideoMain(),),
+    Center(child: UsingListAllVideos(),),
     Center(child: AudioListPage(),),
     Center(child: Browse(),),
 
