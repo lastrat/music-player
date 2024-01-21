@@ -16,6 +16,7 @@ class _VideoMainState extends State<VideoMain> {
             child: Padding(
               padding: const EdgeInsets.all(10.0),
               child: GridView(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,mainAxisSpacing: 30, crossAxisSpacing: 30),
                 children: [
                   InkWell(
                     child: Container(
@@ -29,7 +30,6 @@ class _VideoMainState extends State<VideoMain> {
                   Container(decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),color: Colors.green),child: Image.asset('assets/images/01.jpg'),),
                   Container(decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),color: Colors.yellow), child: Image.asset('assets/images/01.jpg'),),
                 ],
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,mainAxisSpacing: 30, crossAxisSpacing: 30),
               ),
             ),
           )

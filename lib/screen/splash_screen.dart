@@ -45,9 +45,9 @@ class _SplashScreenState extends State<SplashScreen>
           begin: Alignment.topRight,
           end: Alignment.bottomLeft),
         ),
-        child: Column(
+        child: const Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const[
+          children: [
             Icon(
                 Icons.video_collection,
                 size: 80,

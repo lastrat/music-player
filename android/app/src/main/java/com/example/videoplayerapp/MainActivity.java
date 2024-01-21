@@ -1,4 +1,5 @@
 package com.example.videoplayerapp;
+import io.flutter.embedding.android.FlutterActivity;
 
 public class MainActivity extends FlutterActivity {
 }

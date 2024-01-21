@@ -85,6 +85,7 @@ class _AudioListPageState extends State<AudioListPage> {
                         )
                     ),
                     Flexible(
+                        flex: 5,
                         child: Text(
                           actualSongTitle,
                           style: const TextStyle(
@@ -93,7 +94,6 @@ class _AudioListPageState extends State<AudioListPage> {
                             fontSize: 10
                           ),
                         ),
-                      flex: 5,
                     )
                   ],
                 ),
@@ -370,7 +370,7 @@ class _AudioListPageState extends State<AudioListPage> {
                   ),
                   onTap: () async{
                     //Toast(context, "Playing: "+ item.data![index].title);
-                    String? url = item.data![index].uri;
+                   // String? url = item.data![index].uri;
                     //await _audioPlayer.setAudioSource(AudioSource.uri(Uri.parse(url!)));
                     _changePlayerViewVisibility();
                     await _audioPlayer.setAudioSource(

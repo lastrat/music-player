@@ -1,6 +1,5 @@
 
 import 'package:flutter/material.dart';
-import 'package:videoplayerapp/basics/DetailList.dart';
 import 'package:videoplayerapp/layout/AudioListPage.dart';
 import 'package:videoplayerapp/layout/Browse.dart';
 import 'package:videoplayerapp/layout/Video.dart';
@@ -26,7 +25,7 @@ class _LayoutState extends State<Layout> {
     return Scaffold(
       body: lists[_currentIndex],
       appBar: AppBar(
-        title: Text("KS player"),
+        title: const Text("KS player"),
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,

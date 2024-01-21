@@ -1,12 +1,11 @@
 import 'dart:io';
 
-import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
 class VideoOutput extends StatefulWidget {
   final File file;
-  VideoOutput({required this.file});
+  const VideoOutput({super.key, required this.file});
 
   File getFile(){
     return file;
@@ -31,6 +30,7 @@ class _VideoOutputState extends State<VideoOutput> {
     _initializeVideoPlayerFuture = _controller.initialize();
     _controller.setLooping(true);
     _controller.setVolume(1);
+
     super.initState();
   }
 
@@ -45,7 +45,7 @@ class _VideoOutputState extends State<VideoOutput> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("KS player"),
+        title: const Text("KS player"),
     ),
       body: FutureBuilder(
         future: _initializeVideoPlayerFuture,
@@ -76,8 +76,8 @@ class _VideoOutputState extends State<VideoOutput> {
               },
               onLongPress: (){
                 //Forward the video by 10 seconds
-                if(_controller.value.position < _controller.value.duration - Duration(seconds: 10)){
-                  _controller.seekTo(_controller.value.position + Duration(seconds: 10));
+                if(_controller.value.position < _controller.value.duration - const Duration(seconds: 10)){
+                  _controller.seekTo(_controller.value.position + const Duration(seconds: 10));
                 } else {
                   _controller.seekTo(_controller.value.duration);
                 }
@@ -93,6 +93,7 @@ class _VideoOutputState extends State<VideoOutput> {
                       bottom: 0,
                       left: 0,
                       width: MediaQuery.of(context).size.width,
+                      height: MediaQuery.of(context).size.height,
                       child: VideoProgressIndicator(
                           _controller,
                           allowScrubbing: true),
@@ -105,7 +106,7 @@ class _VideoOutputState extends State<VideoOutput> {
           }
           else {
             //Display a progress indicator while video is loading
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           }
@@ -129,6 +130,6 @@ class _VideoOutputState extends State<VideoOutput> {
       ? Container()
       : Container(
       alignment: Alignment.center,
-      child: Icon(Icons.play_arrow, color:  Colors.white, size: 80));
+      child: const Icon(Icons.play_arrow, color:  Colors.white, size: 80));
 
 }
