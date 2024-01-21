@@ -166,7 +166,7 @@ class _AudioListPageState extends State<AudioListPage> {
                               ),
                               Flexible(
                                   child: Text(
-                                    progress.toString().split(".")[0],
+                                    total.toString().split(".")[0],
                                     style: const TextStyle(
                                       color: Colors.white70,
                                       fontSize: 15,

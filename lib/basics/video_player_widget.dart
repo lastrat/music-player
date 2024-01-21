@@ -65,6 +65,23 @@ class _VideoOutputState extends State<VideoOutput> {
                   });
                 }
               },
+              onDoubleTap: (){
+                //Backward the video by 10 seconds
+                if(_controller.value.position > const Duration(seconds: 10)){
+                  _controller.seekTo(_controller.value.position - const Duration(seconds: 10));
+                }
+                else{
+                  _controller.seekTo(const Duration(seconds: 0));
+                }
+              },
+              onLongPress: (){
+                //Forward the video by 10 seconds
+                if(_controller.value.position < _controller.value.duration - Duration(seconds: 10)){
+                  _controller.seekTo(_controller.value.position + Duration(seconds: 10));
+                } else {
+                  _controller.seekTo(_controller.value.duration);
+                }
+              },
               child: IntrinsicHeight(
                 child:Stack(
                   children: <Widget>[
@@ -87,6 +104,7 @@ class _VideoOutputState extends State<VideoOutput> {
             );
           }
           else {
+            //Display a progress indicator while video is loading
             return Center(
               child: CircularProgressIndicator(),
             );
